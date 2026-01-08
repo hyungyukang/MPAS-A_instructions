@@ -63,28 +63,38 @@ The ERA5 reanalysis data is provided in this instruction as an example.
 https://1drv.ms/u/c/b751c0f0fb0cd990/IQD2Ydn7jOs-QZSjG4AVeVHzAZewZyg60SMTnSu79ympxmQ?e=vncMiQ
 
 ### 2.1. Generating intermediate files from reanalysis GRIB data
-#### 2.1.1. Link the reanalysis data
+#### 2.1.1. Linking the reanalysis data
 ```
 cd WPS
 ./link_grib.csh /path/to/era5_all_2021082700.grb
 ```
-#### 2.1.2. Change the data in `namelist.wps` accordingly
+#### 2.1.2. Changing the data in `namelist.wps` accordingly
 Open `namelist.wps` and change `start_date` and `end_date` accordingly.
 For the current example data, set as follows:
 ```
  start_date = '2021-08-27_00:00:00',
  end_date   = '2021-08-27_00:00:00',
 ```
-#### 2.1.3. Link `Vtable` for the reanalysis data
+#### 2.1.3. Linking `Vtable` for the reanalysis data
 The current ERA5 reanalysis data uses `ungrib/Variable_Tables/Vtable.ERA-interim.pl`.
 ```
 ln -fs ./ungrib/Variable_Tables/Vtable.ERA-interim.pl ./Vtable
 ```
-#### 2.1.4. Run `ungrib.exe`
+#### 2.1.4. Running `ungrib.exe`
 ```
 ./ungrib.exe
 ```
 Successful running will create the intermediate file `FILE:2021-08-27_00`.
+
+For more details on WPS, please refer to WPS user guide (https://www2.mmm.ucar.edu/wrf/users/wrf_users_guide/build/html/wps.html).
+
+### 2.2. Creating MPAS-A initial conditions
+#### 2.2.1. Generating the static file from the base mesh
+
+To obtain base meshes, please visit the NCAR MPAS-A mesh download section (https://mpas-dev.github.io/atmosphere/atmosphere_meshes.html)
+
+#### 2.2.2. Creating the initial condition
+
 
 ## 3. Running MPAS-A
 
