@@ -1,0 +1,11 @@
+### 1.2.4. Building WPS for ungrib
+```
+cd WPS
+
+./configure --nowrf --build-grib2-libs
+```
+There are more than 20 choces. Enter a selection based on the system configuration. `serial` is recommended for quick tests.
+```
+./compile ungrib
+```
+

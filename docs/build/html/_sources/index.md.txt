@@ -6,3 +6,7 @@ MPAS-A instructions documentation
 ```{toctree}
    :maxdepth: 1
    :caption: Contents:
+
+building/MPAS-A
+building/WPS
+```
