@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1. Building programs &mdash; MPAS-A instructions 0.1 documentation</title>
+  <title>Building programs &mdash; MPAS-A instructions 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.2.4. Building WPS for ungrib" href="WPS.html" />
+    <link rel="next" title="Creating model initial conditions using reanalysis data" href="../init/MPAS-A.html" />
     <link rel="prev" title="MPAS-A instruction" href="../index.html" /> 
 </head>
 
@@ -44,21 +44,22 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Building programs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#obtaining-codes">1.1. Obtaining codes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mpas-a-code">1.1.1. MPAS-A code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wps-wrf-pre-precessing-system-code-for-initialization">1.1.2. WPS (WRF Pre-precessing System) code for initialization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Building programs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#obtaining-codes">Obtaining codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mpas-a-code">MPAS-A code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wps-wrf-pre-precessing-system-code-for-initialization">WPS (WRF Pre-precessing System) code for initialization</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">1.2. Building programs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#loading-required-modules">1.2.1. Loading required modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#building-mpas-a-model">1.2.2. Building MPAS-A model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#building-mpas-a-initialization-program">1.2.3. Building MPAS-A initialization program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Building programs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loading-required-modules">Loading required modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-mpas-a-model">Building MPAS-A model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-mpas-a-initialization-program">Building MPAS-A initialization program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-wps-for-ungrib">Building WPS for ungrib</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="WPS.html">1.2.4. Building WPS for ungrib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../init/MPAS-A.html">Creating model initial conditions using reanalysis data</a></li>
 </ul>
 
         </div>
@@ -75,7 +76,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">1. Building programs</li>
+      <li class="breadcrumb-item active">Building programs</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/building/MPAS-A.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -86,26 +87,26 @@
            <div itemprop="articleBody">
              
   <section id="building-programs">
-<h1>1. Building programs<a class="headerlink" href="#building-programs" title="Link to this heading"></a></h1>
+<h1>Building programs<a class="headerlink" href="#building-programs" title="Link to this heading"></a></h1>
 <section id="obtaining-codes">
-<h2>1.1. Obtaining codes<a class="headerlink" href="#obtaining-codes" title="Link to this heading"></a></h2>
+<h2>Obtaining codes<a class="headerlink" href="#obtaining-codes" title="Link to this heading"></a></h2>
 <section id="mpas-a-code">
-<h3>1.1.1. MPAS-A code<a class="headerlink" href="#mpas-a-code" title="Link to this heading"></a></h3>
+<h3>MPAS-A code<a class="headerlink" href="#mpas-a-code" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">MPAS</span><span class="o">-</span><span class="n">Dev</span><span class="o">/</span><span class="n">MPAS</span><span class="o">-</span><span class="n">Model</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </section>
 <section id="wps-wrf-pre-precessing-system-code-for-initialization">
-<h3>1.1.2. WPS (WRF Pre-precessing System) code for initialization<a class="headerlink" href="#wps-wrf-pre-precessing-system-code-for-initialization" title="Link to this heading"></a></h3>
+<h3>WPS (WRF Pre-precessing System) code for initialization<a class="headerlink" href="#wps-wrf-pre-precessing-system-code-for-initialization" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">wrf</span><span class="o">-</span><span class="n">model</span><span class="o">/</span><span class="n">WPS</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="id1">
-<h2>1.2. Building programs<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h2>Building programs<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <section id="loading-required-modules">
-<h3>1.2.1. Loading required modules<a class="headerlink" href="#loading-required-modules" title="Link to this heading"></a></h3>
+<h3>Loading required modules<a class="headerlink" href="#loading-required-modules" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">cray</span><span class="o">-</span><span class="n">netcdf</span><span class="o">-</span><span class="n">hdf5parallel</span>
 <span class="n">module</span> <span class="n">load</span> <span class="n">cray</span><span class="o">-</span><span class="n">parallel</span><span class="o">-</span><span class="n">netcdf</span>
 </pre></div>
@@ -113,7 +114,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">NetCDF</span></code> and <code class="docutils literal notranslate"><span class="pre">Parallel</span> <span class="pre">NetCDF</span></code> are required modules. If those modules are not installed in the system, users need to install separately.</p>
 </section>
 <section id="building-mpas-a-model">
-<h3>1.2.2. Building MPAS-A model<a class="headerlink" href="#building-mpas-a-model" title="Link to this heading"></a></h3>
+<h3>Building MPAS-A model<a class="headerlink" href="#building-mpas-a-model" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build_mpas</span>
 <span class="n">cd</span> <span class="n">build_mpas</span>
 <span class="n">cmake</span> <span class="o">-</span><span class="n">S</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">MPAS</span><span class="o">-</span><span class="n">Model</span> <span class="o">-</span><span class="n">B</span> <span class="o">./</span>
@@ -123,12 +124,24 @@
 <p>If successful, <code class="docutils literal notranslate"><span class="pre">bin/mpas_atmosphere</span></code> is compiled.</p>
 </section>
 <section id="building-mpas-a-initialization-program">
-<h3>1.2.3. Building MPAS-A initialization program<a class="headerlink" href="#building-mpas-a-initialization-program" title="Link to this heading"></a></h3>
+<h3>Building MPAS-A initialization program<a class="headerlink" href="#building-mpas-a-initialization-program" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DMPAS_CORES</span><span class="o">=</span><span class="n">init_atmosphere</span> <span class="o">-</span><span class="n">S</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">MPAS</span><span class="o">-</span><span class="n">Model</span> <span class="o">-</span><span class="n">B</span> <span class="o">./</span>
 <span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">./</span>
 </pre></div>
 </div>
 <p>If successful, <code class="docutils literal notranslate"><span class="pre">bin/mpas_init_atmosphere</span></code> is compiled.</p>
+</section>
+<section id="building-wps-for-ungrib">
+<h3>Building WPS for ungrib<a class="headerlink" href="#building-wps-for-ungrib" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">WPS</span>
+
+<span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">nowrf</span> <span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">grib2</span><span class="o">-</span><span class="n">libs</span>
+</pre></div>
+</div>
+<p>There are more than 20 choces. Enter a selection based on the system configuration. <code class="docutils literal notranslate"><span class="pre">serial</span></code> is recommended for quick tests.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="nb">compile</span> <span class="n">ungrib</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -138,7 +151,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../index.html" class="btn btn-neutral float-left" title="MPAS-A instruction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="WPS.html" class="btn btn-neutral float-right" title="1.2.4. Building WPS for ungrib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../init/MPAS-A.html" class="btn btn-neutral float-right" title="Creating model initial conditions using reanalysis data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

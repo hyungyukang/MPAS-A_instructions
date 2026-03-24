@@ -8,5 +8,5 @@ MPAS-A instructions documentation
    :caption: Contents:
 
 building/MPAS-A
-building/WPS
+init/MPAS-A
 ```
