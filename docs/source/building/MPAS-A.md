@@ -16,6 +16,13 @@ git clone https://github.com/wrf-model/WPS.git
 git clone https://github.com/NCAR/ParallelIO.git
 ```
 
+### METIS (graph partition) & GKlib
+```
+git clone https://github.com/KarypisLab/METIS.git
+cd METIS
+git clone https://github.com/KarypisLab/GKlib.git
+```
+
 ## Building programs
 GNU compiler is recommended for a quick test.
 
@@ -73,5 +80,24 @@ There are more than 20 choces. Enter a selection based on the system configurati
 ./compile ungrib
 ```
 
-<!-- 1195  cmake -DMPAS_CORES="init_atmosphere;atmosphere"  -S ../MPAS-Model -B ./
- 1196  cmake --build ./ -j 4-->
+### Building METIS
+Reference: https://karypislab.github.io/METIS/
+- METIS is serial graph partitioning software for distributed MPAS-A runs.
+- GKlib installation is required.
+
+#### Building GKlib
+```
+cd METIS/GKlib
+make config cc=gcc shared=1 prefix=/path/to/METIS/install
+make
+make install
+```
+`cc` must be set as the C compiler executable.
+
+#### Building METIS
+```
+cd METIS/
+make config cc=gcc prefix=/path/to/METIS/install
+```
+
+If successful, `METIS/install/bin/gpmetis` is compiled.
