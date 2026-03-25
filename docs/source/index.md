@@ -8,7 +8,8 @@ MPAS-A instructions documentation
    :caption: Contents:
 
 building/MPAS-A
-init/down_fnl
 init/down_wps_geog
+init/down_mesh
+init/down_fnl
 init/MPAS-A
 ```
