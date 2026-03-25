@@ -9,5 +9,6 @@ MPAS-A instructions documentation
 
 building/MPAS-A
 init/down_fnl
+init/down_wps_geog
 init/MPAS-A
 ```
