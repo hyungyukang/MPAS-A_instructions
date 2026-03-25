@@ -1,21 +1,38 @@
 # Download reanalysis data
-In this instruction, global reanalysis data is used to initialize the model.
+In this instruction, global reanalysis data (e.g., FNL and ERA5) is used to initialize the model.
 
-## Download FNL data
+This instruction provides a Python script to download the Final (FNL) 0.25 degree global analysis data.
+
+## Downloading FNL data
 Reference: https://gdex.ucar.edu/datasets/d083003/
 
-### Linking the reanalysis data
+### Cloning this instruction
 ```
-cd WPS
-./link_grib.csh /path/to/era5_all_2021082700.grb
+git clone https://github.com/hyungyukang/MPAS-A_instructions.git
+cd MPAS-A_instructions/down_fnl_data
+
 ```
-### Changing the data in `namelist.wps` accordingly
-Open `namelist.wps` and change `start_date` and `end_date` accordingly.
-For the current example data, set as follows:
+
+### Changing the date in `NCAR_FNL025.py`
+Open `NCAR_FNL025.py` and change `startdate`, `starthour`, `enddate`, `endhour`.
+
+In this instruction, we will simulation hurricane Helene (2024) initialized at `2024-09-25_00:00:00`.
+To download one time frame, set the start time = end time. (note: FNL is provided 6 hourly.)
 ```
- start_date = '2021-08-27_00:00:00',
- end_date   = '2021-08-27_00:00:00',
+startdate = datetime.date(2024,9,25)
+starthour = datetime.time(0, 0, 0)
+
+enddate = datetime.date(2024,9,25)
+endhour = datetime.time(0, 0, 0)
 ```
+
+### Downloading FNL data (~450 MB)
+```
+python NCAR_FNL025.py
+```
+`gdas1.fnl0p25.2024092500.f00.grib2` will be downloaded.
+
+<!--
 ### Linking `Vtable` for the reanalysis data
 The current ERA5 reanalysis data uses `ungrib/Variable_Tables/Vtable.ERA-interim.pl`.
 ```
@@ -28,10 +45,4 @@ ln -fs ./ungrib/Variable_Tables/Vtable.ERA-interim.pl ./Vtable
 Successful running will create the intermediate file `FILE:2021-08-27_00`.
 
 For more details on WPS, please refer to WPS user guide (https://www2.mmm.ucar.edu/wrf/users/wrf_users_guide/build/html/wps.html).
-
-## Creating MPAS-A initial conditions
-### Generating the static file from the base mesh
-
-To obtain base meshes, please visit the NCAR MPAS-A mesh download section (https://mpas-dev.github.io/atmosphere/atmosphere_meshes.html)
-
-### Creating the initial condition
+-->
