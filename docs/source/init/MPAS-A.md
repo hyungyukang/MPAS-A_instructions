@@ -1,7 +1,4 @@
 # Creating initial conditions
-The ERA5 reanalysis data is provided in this instruction as an example.
-
-https://1drv.ms/u/c/b751c0f0fb0cd990/IQD2Ydn7jOs-QZSjG4AVeVHzAZewZyg60SMTnSu79ympxmQ?e=vncMiQ
 
 ## Generating intermediate files from reanalysis GRIB data
 ### Linking the reanalysis data
