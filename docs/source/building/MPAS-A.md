@@ -103,11 +103,7 @@ make config cc=gcc prefix=/path/to/METIS/install
 If successful, `METIS/install/bin/gpmetis` is compiled.
 
 
-
-<!-------------------------------------------------------------!>
-
 ## Building in offline machines
-
 
 
 If your offline machine already has **MPICH, NetCDF, NetCDF-Fortran, and Parallel-NetCDF** installed, the main challenge is not the libraries themselves. Instead, recent versions of MPAS-Atmosphere attempt to download additional physics source code and lookup tables during compilation.
@@ -246,7 +242,7 @@ src/core_atmosphere/physics/Makefile
 
 Find the line:
 
-```makefile
+```bash
 ./../tools/manage_externals/checkout_externals --externals ./../Externals.cfg
 ```
 
@@ -508,5 +504,3 @@ If both executables are generated successfully and their shared library dependen
 
 **Note:** Successful compilation does not guarantee that all runtime input files are available. Additional mesh files, initial conditions, forcing data, and physics datasets may be required depending on the simulation configuration.
 
-
-<!-------------------------------------------------------------!>
